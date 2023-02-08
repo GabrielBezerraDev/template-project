@@ -1,4 +1,3 @@
-const { create } = require('connect-mongo')
 const mongoose = require('mongoose')
 
 const CreateSchema = new mongoose.Schema({
@@ -44,11 +43,13 @@ async deletandoContato(id){
    return await CreateModel.findOneAndDelete({contatoId: id})
 }
 
-async upgradeContato(id){
-    return await CreateModel.findOneAndUpdate({contatoId: id}, { new: true})
+async updateContato(id, novoObjeto){
+    return await CreateModel.findOneAndUpdate({contatoId: id}, {nome: novoObjeto.nome, sobrenome: novoObjeto.sobrenome, email: novoObjeto.email, numero: novoObjeto.numero}, { new: true})
 }
 }
 
 
+
+module.exports = Contato
 
 module.exports = Contato

@@ -15,7 +15,9 @@ exports.logout = (req, res) => {
 exports.creating = (req, res) => {
     if(!req.session) return console.log('vc precisa está logado');
     const userId = req.params.userId
-    res.render('createContato', {userId})
+    let createId = req.params.createId
+    const contatoId = req.params.contatoId 
+    res.render('createContato', {userId, createId, contatoId})
 }
 
 exports.create = async (req,res) => {
@@ -39,6 +41,14 @@ exports.create = async (req,res) => {
     return
 }
 
+exports.modify = async (req,res) => {
+    const contato = new Contato()
+    console.log(req.body);
+    await  contato.updateContato(req.params.contatoId, req.body)
+    req.session.save(() => res.redirect(`/${req.params.userId}/criado/${req.params.createId}/`))
+    return
+}
+
 exports.edit = async (req,res) => {
     const contato = new Contato()
     let dados = await contato.existUser(req.params.userId)
@@ -53,22 +63,22 @@ exports.edit = async (req,res) => {
             contatoId: dados.contatoId
         }
     })
-    console.log(dados);
-    res.render('index', {dados})
+    const userId = req.params.userId
+    const createId = req.params.createId
+    res.render('index', {dados, userId, createId})
     return
 }
 
-exports.updateContato = async (req,res) => {
-    
+exports.updateContato =  (req,res) => {
+    console.log('esse middleware está funcionando')
+    req.session.save(() => res.redirect(`${req.url}/createContato`))
+
 }
-
-// const contato = new Contato()
-// await contato.updateContato(req.params.contatoId)
-
 
 exports.deleteContato = async (req,res) => {
     const contato = new Contato()
     console.log(req.params.contatoId);
     await contato.deletandoContato(req.params.contatoId)
-    res.redirect(`/:${req.params.userId}/criado/${req.params.crea}/`)
+    res.redirect('back')
+    return
 }
