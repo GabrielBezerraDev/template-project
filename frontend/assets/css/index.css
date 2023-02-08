@@ -1,0 +1,218 @@
+* {
+    color: rgb(0, 0, 0);
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0px;
+}
+
+body {
+    background-color: rgb(251, 224, 160);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    gap: 28px;
+}
+
+body nav {
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.66);   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1050px;
+}
+
+body nav div {
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body nav div a, body nav p, body nav  a {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    margin-left: 50px;
+}
+
+body nav div a, body nav  a  {
+    margin-bottom: 9px;
+}
+
+body nav a {
+    margin-left: 1650px;
+}
+
+body main.agenda {
+    width: 1100px;
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(75, 103, 111);
+    border-radius: 8px;
+    padding: 50px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+body main.logar-usuario, main.cadastrar-usuario, main.create{
+    width: 350px;
+    height: 440px;
+    border: 3px solid rgb(75, 103, 111);
+    border-radius: 18px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+body main.create {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+body main.create h {
+    font-size: 30px;
+}
+
+body main.create form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+body main.create form label {
+    font-size: 22px;
+}
+
+body main.logar-usuario {
+    height: 370px;
+}
+
+body main.logar-usuario p, body main.cadastrar-usuario p, a {
+    font-weight: bold;
+    font-weight:bold; 
+    font-size: 20px; 
+    margin-top: 20px;
+    text-align: center;
+}
+
+body main.logar-usuario a:hover, body main.cadastrar-usuario a:hover {
+    color: #07119b;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+body header {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+body main.agenda table tr{
+    display: flex;
+    gap: 0px;
+}
+
+
+body main.agenda table tr td {
+    border: 1px solid black;
+    width: 225px;
+    padding: 7px;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+}
+
+body main.agenda table tr td.options{
+    border: none;
+    width: 50px;
+    border: 2px solid black;
+    border-top: 6px solid black;
+}
+
+body main.agenda table tr td.options button {
+    cursor: pointer;
+}
+
+body main.agenda table tr td
+
+body main.logar-usuario, body main.cadastrar-usuario {
+    margin-top: 150px;
+}
+
+body main.logar-usuario form, body main.cadastrar-usuario form {
+    margin-top: 35px;
+    border: 2px solid black;
+    padding: 22px;
+    border-radius: 8px;
+    background-color: rgba(251, 224, 160, 0.47);
+}
+
+body main.logar-usuario form button, body main.cadastrar-usuario form button {
+    margin-left: 46px;
+    margin-top: 25px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 83px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+div.erros, div.createSuccess{
+    position: absolute;
+    top: 180px;
+    right: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+div.erros div, div.createSuccess div {
+    width: 400px;
+    height: 30px;
+    border-radius: 16px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.erros div {
+    background-color: rgba(242, 138, 138, 0.853);
+}
+
+div.createSuccess div {
+    background-color: rgba(110, 246, 110, 0.76);
+}
+
+div.erros div p, div.createSuccess div p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.inicio {
+    border-left: 2px solid black;
+}
+
+.fim {
+    border-right: 2px solid black;
+}
+
+body main.agenda table tr.legenda td  {
+    border: none
+}
+
+input {
+    display: block;
+    padding: 6px;
+    font-size: 20px;
+}

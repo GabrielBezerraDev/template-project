@@ -1,0 +1,19 @@
+<%if(errors) {%>
+    <div  class="erros">
+    <% errors.forEach(erro => { %>
+        <div>
+            <p class="erro"><%=erro%><p>
+        </div>
+        <%})%>  
+    </div>  
+<%}%>
+
+<%if(success) {%>
+    <div  class="createSuccess">
+     <% success.forEach(success => { %>
+        <div>
+            <p class="success"><%=success%><p>
+        </div>
+        <%})%>  
+    </div>  
+<%}%>   

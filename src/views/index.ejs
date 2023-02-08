@@ -1,0 +1,38 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/nav.ejs') %>
+
+<%if(!dados){%>
+    <header>Agenda</header>
+    <p style = "font-weight: bold;">Seus contatos estão abaixo</p>
+    <main class="agenda">
+        <table>
+            <tr>
+            </tr>
+        </table>
+    </main>
+<%}%>
+<%if(dados){%>
+    <header>Agenda</header>
+    <p style = "font-weight: bold;">Seus contatos estão abaixo</p>
+    <main class="agenda">
+        <table>
+            <tr class="legenda">
+                <td>Nome:</td>
+                <td>Sobrenome:</td>
+                <td>Email:</td>
+                <td>Numero:</td>
+            </tr>
+            <%for(let i = 0; i < dados.length; i++){%>
+                <tr>
+                    <td><%=dados[i].nome%></td>
+                    <td><%=dados[i].sobrenome%></td>
+                    <td><%=dados[i].email%></td>
+                    <td><%=dados[i].numero%></td>
+                    <td class="options"><button><a href="<%=url%><%=dados[i].contatoId%>/update">Update</a></button></td>
+                    <td class="options"><button><a href="<%=url%><%=dados[i].contatoId%>/delete">Delete</a></button></td>
+                </tr>
+            <%}%>
+        </table>
+    </main>
+<%}%>
+<%- include('includes/footer.ejs') %>

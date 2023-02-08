@@ -1,0 +1,35 @@
+<%(function(){%>
+    <%if(url === "/login/" || url === "/cadastro/"){%>
+    <body>
+        <nav>
+            <p>Agenda</p>
+        </nav>
+    <%return%>
+    <%}%>
+    <%if(url === "/home/createContato/"){%>
+    <body>
+        <nav>
+            <a href="/home/logout">sair</a>
+        </nav>
+    <%return%>
+    <%}%>
+    <%if(!user){%>
+    <body>
+        <nav>
+            <p>Agenda</p>
+            <a href="/login/">login</a>
+        </nav>
+    <%return%>
+    <%}%>
+    <%if(user){%>
+    <body>
+        <nav>
+            <p>Agenda</p>
+            <div>
+                <a href="<%=url%>/logout">sair</a>
+                <a href="<%=url%>createContato"> criar contato</a>
+            </div>
+        </nav>
+    <%return%>
+<%}})()%>
+    
