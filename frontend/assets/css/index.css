@@ -50,7 +50,7 @@ body nav a {
 }
 
 body main.agenda {
-    width: 1100px;
+    width: 1250px;
     height: 250px;
     background-color: rgb(255, 255, 255);
     border: 3px solid rgb(75, 103, 111);
@@ -134,7 +134,7 @@ body main.agenda table tr td {
 
 body main.agenda table tr td.options{
     border: none;
-    width: 50px;
+    width: 90px;
     border: 2px solid black;
     border-top: 6px solid black;
 }

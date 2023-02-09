@@ -48,8 +48,4 @@ async updateContato(id, novoObjeto){
 }
 }
 
-
-
-module.exports = Contato
-
 module.exports = Contato

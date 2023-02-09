@@ -31,6 +31,7 @@ exports.entrar = async (req,res) => {
     req.flash('success', 'Você entrou no sistema');
     console.log(acessar.user._id);
     req.session.save(function(){
-        return res.redirect(`/home/${acessar.user._id}/`)
+    const createId = 'first'
+        return res.redirect(`/home/${createId}/${acessar.user._id}/`)
     })
 }

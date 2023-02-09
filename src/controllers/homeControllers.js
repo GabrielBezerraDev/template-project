@@ -2,7 +2,6 @@ const Contato = require('../models/createModel')
 
 exports.newPage = (req, res) => {
     let dados = null
-    const user = req.session
     res.render('index', {dados})
 }
 
