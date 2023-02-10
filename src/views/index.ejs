@@ -28,8 +28,8 @@
                     <td><%=dados[i].sobrenome%></td>
                     <td><%=dados[i].email%></td>
                     <td><%=dados[i].numero%></td>
-                    <td class="options"><button><a href="/<%=userId%>/<%=createId%>/<%=dados[i].contatoId%>/update/createContato">Update</a></button></td>
-                    <td class="options"><button><a href="/<%=userId%>/<%=dados[i].contatoId%>/Delete">Delete</a></button></td>
+                    <td class="options"><button><a href="/<%=userId%>/<%=createId%>/<%=dados[i].contatoId%>/update">Update</a></button></td>
+                    <td class="options"><button><a href="/<%=userId%>/<%=dados[i].contatoId%>/<%=createId%>/delete">Delete</a></button></td>
                 </tr>
             <%}%>
         </table>

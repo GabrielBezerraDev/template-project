@@ -1,5 +1,7 @@
 <%- include('includes/head.ejs') %>
 <%- include('includes/nav.ejs') %>
+
+<%if(!url.match(/update/)){%>
     <main class="create">
         <h><strong>Crie seu contato</strong></h>
         <form action="/home/<%=userId%>/createContato/criado" method="post">
@@ -19,4 +21,26 @@
             <button>Criar</button>
         </form>
     </main>
+<%}%>
+<%if(url.match(/update/)){%>
+    <main class="create">
+        <h><strong>Editar contato</strong></h>
+        <form action="/<%=userId%>/<%=createId%>/<%=contatoId%>/modificar/" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <label>Nome
+            <input type="text" name="nome">
+            </label>
+            <label>Sobrenome
+            <input type="text" name="sobrenome">
+            </label>
+            <label>Email
+            <input type="text" name="email">
+            </label>
+            <label>Número para contato
+            <input type="number" name="numero">
+            </label>
+            <button>Criar</button>
+        </form>
+    </main>
+<%}%>
 <%- include('includes/footer.ejs') %>

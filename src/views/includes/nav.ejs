@@ -26,8 +26,10 @@
         <nav>
             <p>Agenda</p>
             <div>
-                <a href="<%=url%>logout">sair</a>
+                <a href="/logout/">sair</a>
+                <%if(url !== "/home/first/63dc297289382541ec5af632/createContato" && url !== "/home/63dc297289382541ec5af632/homePage/createContato" && url !== `/63dc297289382541ec5af632/criado/${createId}/createContato`){%>
                 <a href="<%=url%>createContato"> criar contato</a>
+                <%}%>
             </div>
         </nav>
     <%return%>

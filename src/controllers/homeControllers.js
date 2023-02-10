@@ -2,7 +2,8 @@ const Contato = require('../models/createModel')
 
 exports.newPage = (req, res) => {
     let dados = null
-    res.render('index', {dados})
+    let createId = null
+    res.render('index', {dados,createId})
 }
 
 exports.logout = (req, res) => {
@@ -14,8 +15,9 @@ exports.logout = (req, res) => {
 exports.creating = (req, res) => {
     if(!req.session) return console.log('vc precisa está logado');
     const userId = req.params.userId
-    let createId = req.params.createId
+    const createId = req.params.createId
     const contatoId = req.params.contatoId 
+    console.log(userId, createId, contatoId);
     res.render('createContato', {userId, createId, contatoId})
 }
 
@@ -51,8 +53,10 @@ exports.modify = async (req,res) => {
 exports.edit = async (req,res) => {
     const contato = new Contato()
     let dados = await contato.existUser(req.params.userId)
-    if(!dados) return 
+    const userId = req.params.userId
+    const createId = req.params.createId
     console.log(dados);
+    if(dados.length === 0) return
     dados = dados.map((dados) => {
         return dados = {
             nome: dados.nome,
@@ -62,8 +66,6 @@ exports.edit = async (req,res) => {
             contatoId: dados.contatoId
         }
     })
-    const userId = req.params.userId
-    const createId = req.params.createId
     res.render('index', {dados, userId, createId})
     return
 }
@@ -76,8 +78,9 @@ exports.updateContato =  (req,res) => {
 
 exports.deleteContato = async (req,res) => {
     const contato = new Contato()
-    console.log(req.params.contatoId);
     await contato.deletandoContato(req.params.contatoId)
-    res.redirect('back')
+    let dados = await contato.existUser(req.params.userId)
+    if(dados.length === 0) return res.redirect(`/home/${req.params.userId}/homePage/`)
+    res.redirect(`/${req.params.userId}/criado/${req.params.createId}/`)
     return
 }
