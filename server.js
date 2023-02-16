@@ -1,3 +1,4 @@
+//teste 32442
 require('dotenv').config();
 
 const path = require('path')

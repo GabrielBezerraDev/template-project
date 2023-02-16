@@ -1,3 +1,4 @@
+//teste 325242
 const express = require('express')
 const homeControllers = require('./src/controllers/homeControllers')
 const route = express.Router()
