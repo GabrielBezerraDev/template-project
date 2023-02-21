@@ -1,4 +1,4 @@
-//teste 325242
+//teste
 const express = require('express')
 const homeControllers = require('./src/controllers/homeControllers')
 const route = express.Router()
@@ -22,7 +22,7 @@ route.get('/logout/' , homeControllers.logout)
 route.get('/cadastro/', loginController.index)
 route.post('/cadastro/register', loginController.register)
 
-route.get('/login/', cadastroController.logar)
+route.get('/', cadastroController.logar)
 route.post('/login/enter', cadastroController.entrar)
 
 

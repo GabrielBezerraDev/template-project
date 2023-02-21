@@ -4,7 +4,6 @@ const Contato = require('../models/createModel')
 exports.logar = (req,res) => {
     console.log('chegou');
     console.log('Essa session está como: '+req.session);
-    const user = req.session
     res.render('login')
 }
 
