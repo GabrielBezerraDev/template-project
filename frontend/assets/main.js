@@ -2,13 +2,11 @@ import './css/index.css'
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
-document.addEventListener('click', ({target}) =>{
-    if(target.classList.contains('logar') || target.classList.contains('cadastrar')){
-        const tela = document.querySelector(`.${target.classList}-usuario`)
-        if(!tela.classList.contains('mostrar')){
-            document.querySelector('.mostrar').style = 'display: none;'
-            document.querySelector('.mostrar').classList.remove('mostrar')
-            tela.classList.add('mostrar')
-            tela.style = 'display:flex;' 
-        }
-}})
+if(!localStorage.getItem("pop")) document.querySelector(".pop").setAttribute("style","display:flex;")
+document.addEventListener("click", ({target}) => {
+        if(target.id === "okay"){
+            document.querySelector(".pop").setAttribute("style","display:none;")
+            localStorage.setItem("pop", true)
+            }
+    }
+)

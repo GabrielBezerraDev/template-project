@@ -49,6 +49,50 @@ body nav a {
     margin-left: 1650px;
 }
 
+body div.pop{
+    width: 350px;
+    height: 620px;
+    background-color: red;
+    position: absolute;
+    top: 10%;
+    border: 3px solid rgb(75, 103, 111);
+    border-radius: 18px;
+    display: none;
+    flex-direction: column;
+    padding: 16px;
+    gap: 20px;
+    background-color: rgb(251, 224, 160);
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+body div.pop strong{
+    text-align: center;
+    font-size: 30px;
+}
+
+body div.pop h{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+body div.pop button{
+    padding: 5px;
+    width: 85px;
+    margin-left: 130px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+body div.pop p.present{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+}
+
 body main.agenda {
     width: 1250px;
     height: 250px;

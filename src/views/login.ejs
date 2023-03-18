@@ -2,6 +2,16 @@
 <%- include('includes/message.ejs') %>
 <%- include('includes/nav.ejs') %>
 
+    <div class="pop">
+        <strong>Bem-vindo a minha aplicação</strong>
+        <h>Por favor leia:</h>
+        <p class="present">
+            Olá querido usuário, está aplição é para fins de estudos de um DEV junior em frontEnd, banco de dados e principalmente BackEnd, ainda estou aprimorando a aplicação, portanto, peço que não armazene dados sensíveis nela, porém se quiser testa-lá fique a vontade, a sua segurança está 
+            garantida, pois, o site conta com certifcado SSL e csrfToken que impedem a falsificação de formulários de terceiros, além de todos os dados serem criptografados com o bcryptjs, então nem eu mesmo
+            o dono desta aplicação tem acesso aos seus dados. <br>Lembrando que está aplicação não está totalmente completa, pois ainda necessário deixa-lá responsiva a dispositivos mobile, entretanto neste momento já é 100% funcional.
+        </p>
+        <button id="okay">Continuar</button>
+    </div>
 <main class="logar-usuario">
     <h style="font-weight:bold; font-size: 30px;">login</h>
     <form action="/login/enter" method="post">
